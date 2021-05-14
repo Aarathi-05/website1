@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>myntra</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style type="text/css">
+	body{
+		font-family: 'Poppins',sans-serif;
+	}
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+    /*.header .row{
+    	margin-top: 70px;
+
+    }*/
+	.navbar{
+
+		display: flex;
+		align-items: center;
+		padding: 20px;
+		position: fixed;
+		background:white;
+		
+	}
+	nav{
+		flex: 1;
+		text-align: left;
+
+	}
+	nav ul{
+		display: inline-block;
+		list-style-type: none;
+	}
+	nav ul li{
+		display: inline-block;
+		margin-left: 20px;
+	}
+	a{
+		text-decoration: none;
+		color: black;
+	}
+	p{
+		color: black;
+	}
+	.container{
+		max-width: 1300px;
+		margin: auto;
+		
+	}
+	form.example input[type=text] {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid grey;
+  max-width: auto;
+  float: center;
+  
+  background: white;
+}
+    form.example button {
+  float: center;
+  
+  padding: 10px;
+  background: white;
+  color: black;
+  font-size: 15px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+  max-width: auto;
+}
+   .row{
+   	display: flex;
+   	align-items: center;
+   	flex-wrap: wrap;
+    justify-content: space-around;
+   }
+   .col-2{
+   	flex-basis: 50%;
+   	min-width: 300px;
+
+   }
+   .col-2 img{
+   	max-width: 100%;
+   	padding: 50px 0px;
+   }
+   .col-2 h1{
+   	font-size: 50px;
+   	line-height: 60px;
+   	margin: 25px 0px;
+   }
+   .btn{
+   	display: inline-block;
+   	background: #ff523b;
+   	color: #fff;
+   	padding: 8px 30px;
+   	margin: 30px;
+   	border-radius: 30px;
+   	transition: background 0.5s;
+   }
+   .btn:hover{
+   	background:#563434;
+
+   }
+
+   /*categories*/
+   .categories{
+   	marrgin:70px 0;
+   }
+   .col-3{
+   	flex-basis: 30%;
+   	min-width: 250px;
+   	margin-bottom: 30px;
+   }
+   .col-3 img{
+   	width: 100%;
+   }
+   .small-container{
+   	max-width: 1080px;
+   	margin: auto;
+   	padding-left: 25px;
+   	padding-right: 25px;
+   }
+   /*product*/
+   .col-4{
+   	flex-basis: 25%;
+   	padding: 10px;
+   	min-width: 200px;
+   	margin-bottom: 50px;
+   	transition: transform 0.5s;
+   }
+   .col-4 img{
+   	width: 100%;
+   }
+   .title{
+   	text-align: center;
+   	color: #555;
+   	margin: 0 auto 80px;
+   	line-height: 60px;
+   	position: relative;
+   }
+   .title::after{
+   	content: '';
+   	background: #ff523b;
+   	width: 80px;
+   	height: 5px;
+   	border-radius: 5px;
+   	position: absolute;
+   	bottom: 0;
+   	left: 50%;
+   	transform: translate(-50%);
+   }
+   h4{
+   	color: #555;
+   	font-weight: normal;
+
+   }
+   .col-4 p{
+   	font-size: 14px;
+   }
+   .rating .fa{
+     color: #ff523b;
+   }
+   .col-4:hover{
+   	transform: translateY(-5px)
+   }
+  .col-2 .offer-img{
+  	padding: 30px;
+  }
+  small{
+  	color:#555;
+  }
+  /*testimonial*/
+  .testimonial{
+  	padding-top: 100px;
+  }
+  .testimonial .col-3{
+  	text-align: center;
+  	padding: 40px 20px;
+  	box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+  	cursor: pointer;
+  	transition: transform 0.5s;
+  }
+  .testimonial .col-3 img{
+  	width: 50px;
+  	margin-top: 20px;
+  	border-radius: 50%;
+  }
+  .testimonial .col-3:hover{
+  	transform: translateY(-10px);
+  }
+  .fa.fa-quote-left{
+  	font-size: 34px;
+  	color: #ff523b;
+  }
+  .col-3 p{
+  	font-style: 12px;
+  	margin: 12px 0;
+  	color: #777;
+  }
+  .testimonial .col-3 h3{
+  	font-weight: 600;
+  	color: #555;
+  	font-size: 16px;
+  }
+</style>
+<body>
+<div class="header">
+<div class="container">
+	<div class="navbar">
+		<div class="logo">
+			<img src="https://www.logotaglines.com/wp-content/uploads/2016/08/26-1443262056-myntra-logo-image-1200x900.jpg" width="75px">
+		</div>
+		    <nav>
+		    	<ul>
+		    		<li><a href=""><b>MEN</b></a></li>
+		    		<li><a href=""><b>WOMEN</b></a></li>
+		    		<li><a href=""><b>KIDS</b></a></li>
+		    		<li><a href=""><b>HOME & LIVING</b></a></li>
+		    		<li><a href=""><b>OFFERS</b></a></li>
+		    	    <li><form style=" margin-left:400px;"  class="example" action="action_page.php">
+                	<input type="text" placeholder="Search for products,brands and more" name="search">
+                	<button type="submit"><i class="fa fa-search"></i></button>
+                	</form></li>
+		    	</ul>
+
+		    </nav>
+		    <img src="https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/19339625881548233621-512.png" width="20px" height="20px">
+		    <img src="https://previews.123rf.com/images/zo3listic/zo3listic1905/zo3listic190500062/125123073-shopping-bag-icon-shopping-bag-vector-icon.jpg" width="30px" height="30px">
+
+	</div>
+	<div class="row">
+		
+
+		<div class="col-2" style="margin-top: 40px;">
+			<h1>India's most loved<br>Shopping platform</h1><br>
+			<p>Shop your style</p>
+			<a href="" class="btn">Explore Now &#x271A;</a>
+		</div>
+		<div class="col-2" style="margin-top: 40px;">
+			<!--<img src="https://brookline.com/wp-content/uploads/2017/04/Washington-Square-Shopping.jpg">--->
+			<img src="https://static.fibre2fashion.com/Newsresource/images/269/sam-styled-by-myntra-3_281182.jpg">
+		</div>
+
+	</div>
+</div>
+</div>	
+
+
+<!--featured category-->
+<div class="categories">
+	<div class="small-container">
+	<div class="row">
+		<div class="col-3">
+			<img src="https://i.pinimg.com/originals/d6/bc/06/d6bc06a6a8a4b072ca588d50ed69f904.jpg">
+		</div>
+		<div class="col-3">
+			<img src="https://assetscdn1.paytm.com/images/catalog/product/A/AP/APPLEVI-S-MENS-SETU2010436C93C3A4/1563057002606_0..jpg">
+		</div>
+		<div class="col-3">
+			<img src="https://medias.fashionnetwork.com/image/upload/v1/medias/c52ae377ceb9fec84db7d7dce3fa9de72210293.jpg">
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<!--Featured product-->
+ <div class="small-container">
+ 	<h2 class="title">Featured Products</h2>
+ 	<div class="row">
+ 		<div class="col-4">
+ 			<img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F2a%2Feb%2F2aebcbe13a3e7286435b55645fd6832af758c653.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_hoodiesswetshirts_hoodies%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]">
+ 			<h4>H&M Women Hooded top</h4>
+ 			<div class="rating">
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star-o"></i>
+ 			</div>
+ 			<p>$50.00</p>
+ 		</div>	
+
+
+ 		<div class="col-4">
+ 			<img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fb7%2F9d%2Fb79da5fb8e3ee2f310c295e121561eb1d7abd50f.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_shoes_ankle_boots%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]">
+ 			<h4>]Block-heeled ankle boots</h4>
+ 			<div class="rating">
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star-half"></i>
+ 			</div>
+ 			<p>$70.00</p>
+ 		</div>	
+
+
+ 		<div class="col-4">
+ 			<img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fd5%2F32%2Fd5321f085257b7ff086956c557b9bac83ab3a4c4.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bmen_jeans_slim%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]">
+ 			<h4>H&M Slim Jeans</h4>
+ 			<div class="rating">
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star-o"></i>
+ 			</div>
+ 			<p>$30.00</p>
+ 		</div>	
+
+
+ 		<div class="col-4">
+ 			<img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F7d%2F73%2F7d73c699ac7b0cf7dd7c07881ad7778d3c4edac7.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bmen_shoes_sneakers%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]">
+ 			<h4>Chunky-soled trainers</h4>
+ 			<div class="rating">
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 			</div>
+ 			<p>$50.00</p>
+ 		</div>	
+ 	</div>
+ 	<h2 class="title">Latest Products</h2>
+ 	 	<div class="row">
+ 		<div class="col-4">
+ 			<img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/10962654/2020/10/9/29f8fcba-daf5-4815-8d6b-838c25ffc3821602231214579-Roadster-Women-Pink-Printed-Boxy-Top-7901602231212392-1.jpg">
+ 			<h3>Roadster</h3>
+ 			<h4>Women Pink Printed Boxy Top</h4>
+ 			<div class="rating">
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star-o"></i>
+ 			</div>
+ 			<p>$15.00</p>
+ 		</div>	
+
+
+ 		<div class="col-4">
+ 			<img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/11809996/2020/4/23/ca2c6476-fb16-48ca-a578-67558afa81dc1587631275653Belt1.jpg">
+ 			<h3>H&M</h3>
+ 			<h4>Women Black Textured Belt With Metal Buckle</h4>
+ 			<div class="rating">
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star-half"></i>
+ 			</div>
+ 			<p>$10.00</p>
+ 		</div>	
+
+
+ 		<div class="col-4">
+ 			<img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/11804202/2020/4/16/fc7ac599-7603-48a4-b091-f0228955e9781587040826767Ribbedturtlenecktop1.jpg">
+ 			<h3>H&M</h3>
+ 			<h4>Women White Ribbed Turtleneck Top</h4>
+ 			<div class="rating">
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star-o"></i>
+ 			</div>
+ 			<p>$30.00</p>
+ 		</div>	
+
+
+ 		<div class="col-4">
+ 			<img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/11352980/2020/10/16/bc9431a0-1f7c-40c7-a1cb-fbcddc2608fc1602820495111-ADIDAS-Originals-Women-Casual-Shoes-7571602820493363-4.jpg">
+ 			<h3>ADIDAS Originals</h3>
+ 			<h4>Women White Solid Leather Team Court Sneakers</h4>
+ 			<div class="rating">
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 			</div>
+ 			<p>$50.00</p>
+ 		</div>	
+
+
+
+
+ 		 	<div class="row">
+ 		<div class="col-4">
+ 			<img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2019/6/8/972c9498-3a37-4d5d-976c-4493b4d5c0021559989322793-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--1.jpg">
+ 			<h3>HRX by Hrithik Roshan</h3>
+ 			<h4>Men Yellow Printed Round Neck T-Shirt</h4>
+ 			<div class="rating">
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star-o"></i>
+ 			</div>
+ 			<p>$50.00</p>
+ 		</div>	
+
+
+ 		<div class="col-4">
+ 			<img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/6832887/2018/11/14/cf91fe75-adb6-4950-9037-20517aa4ec2f1542180378658-WROGN-Men-Grey-Solid-Hooded-Sweatshirt-6291542180378494-1.jpg">
+
+ 			<h3>WROGN</h3>
+ 			<h4>Men Grey Solid Hooded Sweatshirt</h4>
+ 			<div class="rating">
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star-half"></i>
+ 			</div>
+ 			<p>$70.00</p>
+ 		</div>	
+
+
+ 		<div class="col-4">
+ 			<img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2020/3/5/ee840735-8f64-4cd7-94e8-e3f4278ccef61583360758818-1.jpg">
+ 			<h3>Red Tape</h3>
+ 			<h4>Men Coffee Brown Solid Leather Formal Derbys</h4>
+ 			<div class="rating">
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star-o"></i>
+ 			</div>
+ 			<p>$30.00</p>
+ 		</div>	
+
+
+ 		<div class="col-4">
+ 			<img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/12330348/2020/9/17/30b62173-9dea-4ac4-b0be-7de4033df1511600319829696-Calvin-Klein-Jeans-Men-Blue-Slim-Fit-Mid-Rise-Mildly-Distres-1.jpg">
+ 			<h3>Calvin Klein Jeans</h3>
+ 			<h4>Men Blue Slim Fit Mid-Rise Mildly Distressed Jeans</h4>
+ 			<div class="rating">
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 				<i class="fa fa-star"></i>
+ 			</div>
+ 			<p>$50.00</p>
+ 		</div>	
+ </div>
+ <!----offer--->
+    <div class="offer">
+    	<div class="small-container">
+    		<div class="row">
+    			<div class="col-2">
+    				<img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/12377104/2020/9/2/cf7655c5-6f4c-49a4-bbce-7ba8112030431599021723074-Fossil-Explorist-HR-Black-Smartwatch-FTW4018-571599021722215-1.jpg" height="20%">
+    			</div>
+    			<div class="col-2">
+    				<p>Exclusively available in myntra</p>
+    				<h1 style="color:#ff523b;">Fossil Smart Watch</h1>
+    				<small>Men Black Explorist HR Smartwatch FTW4018 features a 39.9% larger Balck color full-touch display with adjustable brightness.</small>
+    				<a href="" class="btn">Buy Now&#x271A; </a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+
+
+
+ <!---testimonial ---->
+      <div class="testimonial">
+      	<div class="small-container">
+      		<div class="row">
+      			<div class="col-3">
+      				<i class="fa fa-quote-left"></i>
+      				<p>porttitor felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Sed lorem enim</p>
+ 					<div class="rating">
+ 				        <i class="fa fa-star"></i>
+ 						<i class="fa fa-star"></i>
+ 						<i class="fa fa-star"></i>
+ 						<i class="fa fa-star"></i>
+ 						<i class="fa fa-star-half"></i>
+ 					</div>
+ 					<img src="https://akns-images.eonline.com/eol_images/Entire_Site/2019513/rs_634x951-190613091108-634-daniel-radcliffe-kimmy-ch-061319.jpg?fit=around|634:auto&output-quality=90&crop=634:auto;center,top">
+ 					<h3>Daniel</h3>
+      			</div>
+
+      			<div class="col-3">
+      				<i class="fa fa-quote-left"></i>
+      				<p>porttitor felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Sed lorem enim</p>
+ 					<div class="rating">
+ 				        <i class="fa fa-star"></i>
+ 						<i class="fa fa-star"></i>
+ 						<i class="fa fa-star"></i>
+ 						<i class="fa fa-star"></i>
+ 						<i class="fa fa-star"></i>
+ 					</div>
+ 					<img src="https://i.dailymail.co.uk/1s/2020/06/10/23/29464936-8408355-image-a-49_1591827902722.jpg">
+ 					<h3>Emma Watson</h3>
+      			</div>
+
+      			<div class="col-3">
+      				<i class="fa fa-quote-left"></i>
+      				<p>porttitor felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Sed lorem enim</p>
+ 					<div class="rating">
+ 				        <i class="fa fa-star"></i>
+ 						<i class="fa fa-star"></i>
+ 						<i class="fa fa-star"></i>
+ 						<i class="fa fa-star"></i>
+ 						
+ 					</div>
+ 					<img src="https://i.pinimg.com/originals/b2/0b/d6/b20bd69b5b735ce413b8e8b7811e2a30.jpg">
+ 					<h3>Ron</h3>
+      			</div>
+      		</div>     		
+      	</div>
+      </div>
+
+ <!--brands-->
+   <div class="brands">
+   	 <div class="small-container">
+   	 	<div class="row">
+   	 		<div class="col-5">
+   	 			<img src="">
+   	 		</div>
+   	 		<div class="col-5">
+   	 			<img src="">
+   	 		</div>
+   	 		<div class="col-5">
+   	 			<img src="">
+   	 		</div>
+   	 		<div class="col-5">
+   	 			<img src="">
+   	 		</div>
+   	 		<div class="col-5">
+   	 			<img src="">
+   	 		</div>
+   	 	</div>
+   	 </div>  	
+   </div>
+</body>
+</html>
